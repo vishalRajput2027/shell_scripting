@@ -1,0 +1,18 @@
+mkdir shell                 # create folder
+cd shell                    # enter folder
+vim forloop.sh              # create/edit script
+cat forloop.sh              # view script
+
+#!/bin/bash
+
+# this is for for loop only
+
+for (( num=1 ; num<=5; num++ ))
+do
+    mkdir demo$num
+done
+
+
+chmod 755 forloop.sh        # give permission
+./forloop.sh                # run script
+ls                          # verify folders
