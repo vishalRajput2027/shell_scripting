@@ -1,7 +1,6 @@
 # shell_scripting
-
- Shell Scripting & DevOps Automation
- Overview
+⭐ Shell Scripting & DevOps Automation
+📌 Overview
 
 This repository contains my Linux Shell Scripting practice and DevOps automation projects.
 The goal of this repository is to learn Bash scripting, Linux commands, automation techniques, and deployment workflows used in DevOps.
@@ -59,6 +58,8 @@ shell-scripting/
 │
 └── projects/
     └── django-docker-deployment
+
+
 📚 Topics Covered
 1️⃣ Linux Basics
 
@@ -170,3 +171,8 @@ Vishal Mewada
 BTech – Computer Science
 Specialization: IoT, Cybersecurity & Blockchain
 LNCT Group, Bhopal
+
+
+
+
+ 
