@@ -1,0 +1,34 @@
+vim errorhandling.sh        # create/edit script
+cat errorhandling.sh        # view script
+
+#!/bin/bash
+create_directory() {
+mkdir demo
+}
+create_directory
+echo"this should not work because the code is interrupted"
+
+chmod 700 errorhandling.sh  # restricted permission
+./errorhandling.sh          # run script
+rm -r demo/                 # remove directory
+vim errorhandling.sh        # edit script
+cat errorhandling.sh        # view script
+
+#!/bin/bash
+
+create_directory() {
+    mkdir demo
+}
+
+if ! create_directory;
+then
+    echo "this code is being exited as the directory already exists"
+    exit 1
+fi
+
+echo "this should not work because the code is interrupted"
+
+chmod 700 errorhandling.sh  # restricted permission
+./errorhandling.sh          # run script
+
+ls                          # verify files
