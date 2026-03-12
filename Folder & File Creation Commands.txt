@@ -1,0 +1,22 @@
+mkdir tmkuc                 # create folder
+cd tmkuc                    # enter folder
+vim hello.sh                # create/edit script
+
+#!/bin/bash
+name="jethalal"
+echo "name of main character of tmkuc is $name"
+echo "today is the date $(date)"
+
+read username
+echo "you entered the username as $username"
+
+echo "arguments are: $0 : $1 $2"
+
+
+cat hello.sh                # view script
+
+chmod 755 hello.sh          # correct permission
+./hello.sh                 #without arguments 
+./hello.sh vishal jetha babita  #with arguments
+
+

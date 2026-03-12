@@ -1,0 +1,35 @@
+🔹 Commands Used
+
+vim elif.sh              # edit script
+cat elif.sh              # view script
+chmod 755 elif.sh        # give execution permission
+./elif.sh                # run script
+./elif.sh tom            # run with argument
+
+
+🔹 Function Script Written
+#!/bin/bash
+
+<< disclaimer
+this is for elif loop
+disclaimer
+
+# function definition
+function is_loyal(){
+
+read -p " $1 ne mud ke kise dekha : " bandi
+read -p " $1 ka pyar % " pyaar
+
+if [[ $bandi == "daya bhabhi" ]]
+then
+    echo " $1 is loyal"
+elif [[ $pyaar -ge 100 ]]
+then
+    echo " $1 is loyal"
+else
+    echo " $1 is not loyal"
+fi
+}
+
+# function calling
+is_loyal "tom"

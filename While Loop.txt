@@ -1,0 +1,27 @@
+vim while.sh             # create while loop script
+cat while.sh             # view script
+#!/bin/bash
+num=0
+while [[ $num -le 5 ]]
+do
+    echo "hello friends"
+    num = $((num+1))
+done
+
+bash while.sh            # run script
+
+vim even.sh              # create even number script
+bash even.sh             # run script
+cat even.sh              # view script
+
+#!/bin/bash
+num=0
+
+while [[ $num -le 10 ]]
+do
+    echo $num
+    num=$((num+2))
+done
+
+
+

@@ -1,0 +1,25 @@
+mkdir shell                 # create folder
+cd shell                    # enter folder
+vim elif.sh                 # create script
+cat elif.sh                 # view script
+#!/bin/bash
+
+<< disclaimer
+this is for elif condition
+disclaimer
+
+read -p "jetha ne mud ke kise dekha : " bandi
+read -p "jetha ka pyar % : " pyaar
+
+if [[ $bandi == "daya bhabhi" ]]
+then
+    echo "jetha is loyal"
+elif [[ $pyaar -ge 100 ]]
+then
+    echo "jetha is loyal"
+else
+    echo "jetha is not loyal"
+fi
+
+chmod 755 elif.sh           # give execute permission
+./elif.sh                   # run script

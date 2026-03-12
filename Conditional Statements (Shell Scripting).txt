@@ -1,0 +1,20 @@
+vim check_condition.sh        # create conditional script
+
+#!/bin/bash
+
+<< condition
+this is for conditional statement
+condition
+
+read -p "jetha na mud ke kise dekha:" bandi
+
+if [[ $bandi == "daya bahbi" ]];
+then
+    echo "jetha is loyal"
+else
+    echo "jetha is tharki"
+fi
+
+chmod 755 check_condition.sh  # give execution permission
+./check_condition.sh          # run script
+cat check_condition.sh        # view script
