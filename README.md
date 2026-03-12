@@ -34,30 +34,15 @@ Docker
 AWS EC2
 
 📂 Repository Structure
-shell-scripting/
-│
-├── basics/
-│   ├── variables
-│   ├── user-input
-│   ├── arguments
-│
-├── conditionals/
-│   ├── if-else
-│   ├── elif
-│
-├── loops/
-│   ├── for-loop
-│   ├── advanced-for-loop
-│   ├── while-loop
-│
-├── functions/
-│
-├── intermediate-scripting/
-│   ├── deployment-scripts
-│   └── automation-projects
-│
-└── projects/
-    └── django-docker-deployment
+shell-scripting
+ ├── 01-linux-basics
+ ├── 02-variables-and-input
+ ├── 03-conditions
+ ├── 04-loops
+ ├── 05-functions
+ ├── 06-file-operations
+ ├── 07-intermediate-scripting
+ └── 08-devops-projects
 
 
 📚 Topics Covered
