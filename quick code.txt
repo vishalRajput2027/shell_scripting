@@ -1,0 +1,82 @@
+##############################
+# LINUX + SHELL QUICK NOTES
+##############################
+
+# OUTPUT
+echo "hello devops learners"   # print text
+echo "hello dosto i am vishal" # print message
+
+# DIRECTORY MANAGEMENT
+mkdir shell                   # create folder
+mkdir shell_scripting         # create folder
+cd shell                      # go inside folder
+cd shell_scripting            # navigate folder
+cd ..                         # go back
+ls                            # list files
+ls -l                         # detailed list
+
+# FILE EDITING
+
+vim hello.sh                  # create/edit script
+#!/bin/bash
+echo "vishal: hello this is vishal mewada"
+echo "vishal: this is my first shell script"
+echo "vishal: so make some noise guys"
+echo "people : so why are you telling me we don't care"
+echo "vishal: please don't demotivate me i am beginner"
+
+
+vim shell.txt                 # edit text file
+
+this is a new file
+this is the next line in shell scripting basics
+
+
+# FILE VIEW
+cat shell.txt                 # show file content
+vim TMKUC.sh
+
+cat TMKUC.sh                  # show script
+
+#!/bin/bash
+
+# this is single line comment
+
+<< comment
+this is multiline comment
+i can write anything here
+comment
+
+name="jetha"
+echo "name is $name"
+
+
+chmod 755 TMKUC.sh            # allow execution
+./hello.sh                    # run script
+./TMKUC.sh                    # run script
+cat /etc/passwd               # show users list
+
+# PERMISSIONS & EXECUTION
+chmod 755 hello.sh            # give execute permission
+# VARIABLES
+name="jetha"                  # variable assign
+echo "$name"                  # print variable
+
+# USER INPUT
+read name                     # take input
+read -p "Enter name: " name   # prompt input
+
+# COMMAND SUBSTITUTION
+today=$(date)                 # store date output
+echo "$today"                 # print date
+
+
+
+# USER MANAGEMENT
+useradd vishal                # add user
+cat /etc/passwd               # verify user
+
+
+
+
+
