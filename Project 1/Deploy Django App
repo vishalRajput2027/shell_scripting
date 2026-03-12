@@ -1,1 +1,80 @@
+mkdir intermediate_shell            # create project folder
+cd intermediate_shell               # enter folder
 
+vim deploy_django_app.sh            # create deployment script
+chmod 755 deploy_django_app.sh      # give execution permission
+./deploy_django_app.sh              # run script
+
+cd django-notes-app                 # enter project folder
+vim Dockerfile                      # edit Dockerfile
+docker build -t notes-app .         # build image
+docker run -d -p 8000:8000 notes-app # run container
+
+docker ps                           # check running containers
+docker ps -a                        # check all containers
+docker logs <container-id>          # check container logs
+docker rm -f $(docker ps -aq)       # remove all containers
+
+curl ifconfig.me                    # check public IP
+
+
+🔹 Script Written (django_app.sh)
+#!/bin/bash
+
+# ==============================
+# Django Docker Deployment Script
+# ==============================
+
+echo "########## Deployment Started ##########"
+
+# Clone Repo
+code_clone() {
+    echo "Cloning Django app..."
+    if [ -d "django-notes-app" ]; then
+        echo "Repo already exists → Skipping clone."
+    else
+        git clone https://github.com/LondheShubham153/django-notes-app.git
+    fi
+}
+
+# Install Docker + Nginx
+install_requirements() {
+    echo "Installing dependencies..."
+    sudo apt-get update
+    sudo apt-get install docker.io nginx -y
+}
+
+# Restart Services
+required_restarts() {
+    echo "Starting services..."
+    sudo systemctl enable docker
+    sudo systemctl start docker
+    sudo systemctl enable nginx
+    sudo usermod -aG docker $USER
+}
+
+# Deploy Django App
+deploy() {
+    echo "Deploying container..."
+    cd django-notes-app || exit
+    docker build -t notes-app .
+    docker rm -f $(docker ps -aq) 2>/dev/null
+    docker run -d -p 8000:8000 notes-app
+}
+
+# Execution Flow
+code_clone
+
+if ! install_requirements; then
+    echo "Dependency installation failed"
+    exit 1
+fi
+
+if ! required_restarts; then
+    echo "Service restart failed"
+    exit 1
+fi
+
+deploy
+
+echo "########## Deployment Completed ##########"
